@@ -1,5 +1,5 @@
-# Use Eclipse Temurin JDK 17 for building
-FROM eclipse-temurin:17-jdk-jammy AS build
+# Use Eclipse Temurin JDK 21 for building
+FROM eclipse-temurin:21-jdk-jammy AS build
 
 # Set working directory
 WORKDIR /app
@@ -19,7 +19,7 @@ COPY src ./src
 RUN ./mvnw clean package -DskipTests
 
 # Use JRE for runtime (smaller image)
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:21-jre-jammy
 
 # Set working directory
 WORKDIR /app
