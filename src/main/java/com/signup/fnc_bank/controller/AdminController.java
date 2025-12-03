@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://pnc-online-banking.netlify.app ")
 public class AdminController {
 
     @Autowired
