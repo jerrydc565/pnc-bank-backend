@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173")  // Allow React app
+@CrossOrigin(origins = "https://pnc-online-banking.netlify.app")  // Allow React app
 public class UserController {
 
     @Autowired
