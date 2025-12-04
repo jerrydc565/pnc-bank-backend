@@ -1,4 +1,4 @@
-﻿package com.signup.fnc_bank.service;
+package com.signup.fnc_bank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -32,9 +32,9 @@ public class EmailService {
             );
 
             mailSender.send(message);
-            System.out.println(" OTP email sent successfully to: " + toEmail);
+            System.out.println("SUCCESS: OTP email sent to: " + toEmail);
         } catch (Exception e) {
-            System.err.println(" Failed to send OTP email to " + toEmail);
+            System.err.println("FAILED to send OTP email to " + toEmail);
             System.err.println("Error: " + e.getMessage());
             e.printStackTrace();
         }
