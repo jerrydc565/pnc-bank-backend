@@ -1,4 +1,4 @@
-package com.signup.fnc_bank.service;
+﻿package com.signup.fnc_bank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -15,8 +15,10 @@ public class EmailService {
     @Async
     public void sendOtpEmail(String toEmail, String otp) {
         try {
+            System.out.println("Attempting to send OTP email to: " + toEmail);
+            
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("noreply@pncbank.com");
+            message.setFrom("pnconlinebanking67@gmail.com");
             message.setTo(toEmail);
             message.setSubject("PNC Bank - Your Login Verification Code");
             message.setText(
@@ -30,9 +32,10 @@ public class EmailService {
             );
 
             mailSender.send(message);
-            System.out.println("OTP email sent successfully to: " + toEmail);
+            System.out.println(" OTP email sent successfully to: " + toEmail);
         } catch (Exception e) {
-            System.err.println("Failed to send OTP email: " + e.getMessage());
+            System.err.println(" Failed to send OTP email to " + toEmail);
+            System.err.println("Error: " + e.getMessage());
             e.printStackTrace();
         }
     }
